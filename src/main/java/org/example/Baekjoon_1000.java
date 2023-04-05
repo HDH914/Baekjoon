@@ -20,7 +20,6 @@ public class Baekjoon_1000 {
         int A = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
 
-
         // A + B 값 출력
         System.out.println(A + B);
 
