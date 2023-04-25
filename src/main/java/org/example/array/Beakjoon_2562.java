@@ -33,7 +33,7 @@ public class Beakjoon_2562 {
                 maxIndex = i + 1;
             }
         }
-        
+
         // 최댓값, 최댓값 인덱스 출력
         System.out.println(max);
         System.out.println(maxIndex);
