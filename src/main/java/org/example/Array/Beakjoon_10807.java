@@ -1,4 +1,4 @@
-package org.example.array;
+package org.example.Array;
 
 import java.io.IOException;
 import java.util.Scanner;
