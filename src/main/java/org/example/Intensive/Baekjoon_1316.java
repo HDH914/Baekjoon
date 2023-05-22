@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 // 출력: 첫째 줄에 그룹 단어의 개수를 출력한다.
 public class Baekjoon_1316 {
         static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         public static void main(String[] args) throws IOException {
             int N = Integer.parseInt(br.readLine());
 
