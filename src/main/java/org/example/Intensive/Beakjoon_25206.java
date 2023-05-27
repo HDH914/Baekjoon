@@ -1,5 +1,10 @@
 package org.example.Intensive;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 // 문제: 인하대학교 컴퓨터공학과를 졸업하기 위해서는, 전공평점이 3.3 이상이거나 졸업고사를 통과해야 한다. 그런데 아뿔싸, 치훈이는 깜빡하고 졸업고사를 응시하지 않았다는 사실을 깨달았다!
 // 치훈이의 전공평점을 계산해주는 프로그램을 작성해보자.
 // 전공평점은 전공과목별 (학점 × 과목평점)의 합을 학점의 총합으로 나눈 값이다.
@@ -10,7 +15,35 @@ package org.example.Intensive;
 
 // 출력: 치훈이의 전공평점을 출력한다.
 public class Beakjoon_25206 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
+        BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
 
+        String str[] = new String[20];
+        double totalSum = 0;
+        double scoreSum = 0;
+        String gradeList[] = {"A+", "A0", "B+", "B0", "C+", "C0", "D+", "D0", "F", "P"};
+        double gradeScore[] = {4.5, 4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.0, 0.0};
+
+        for (int i = 0; i < 20; i++) {
+            str[i] = bfr.readLine();
+            StringTokenizer st = new StringTokenizer(str[i], " ");
+            String subject = st.nextToken();
+            double score = Double.parseDouble(st.nextToken());
+            String grade = st.nextToken();
+
+            for (int j = 0; j < 10; j++) {
+                if (grade.equals(gradeList[j])) {
+                    totalSum += score * gradeScore[j];
+                    if (j != 9) {
+                        scoreSum += score;
+                    }
+                }
+            }
+        }
+
+        double average = totalSum / scoreSum;
+        System.out.printf("%.6f\n", average);
+
+        bfr.close();
     }
 }
